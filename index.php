@@ -58,12 +58,16 @@ $example_persons_array = [
 
 function getPartsFromFullname($example_persons_array){
     global $fio;
+    echo "getpartsfromfullname";
+    echo "<br><br>";
 for ($i = 0; $i <= 10; $i++){
     
     $fullnames = explode(" ", $example_persons_array[$i]["fullname"]);
 $fio[$i]['surname'] = $fullnames[0];
 $fio[$i]['name'] = $fullnames[1];
 $fio[$i]['patronomyc'] = $fullnames[2];
+echo ' фамилия '.$fio[$i]['surname'].' имя '.$fio[$i]['name'].' отчество '.$fio[$i]['patronomyc'];
+echo '<br>';
 }
 }
 
@@ -71,12 +75,19 @@ getPartsFromFullname($example_persons_array);
 
 function getFullnameFromParts($fio){
     global $imya;
+    echo "<br>";
+    echo "getfullnamefromparts";
+    echo "<br><br>";
     for ($i = 0; $i <= 10; $i++){
         $imya[$i] = $fio[$i]['surname'].' '.$fio[$i]['name'].' '.$fio[$i]['patronomyc'];
+      
+        echo $imya[$i];
+        echo "<br>";
 }
 }
 getFullnameFromParts($fio);
 
+echo "<br>Сокращение имени <br><br>";
 function getShortName($fio){
     global $short;
     for ($i = 0; $i <= 10; $i++){
